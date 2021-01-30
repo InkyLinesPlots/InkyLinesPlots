@@ -9,17 +9,23 @@ Some history around how the plotter came into being can be found here:
 https://www.youtube.com/watch?v=pDOsCTI32Xw
 
 # Running on a computer that's **NOT** connected to a plotter
-The plotter software is designed to run from any machine installed with:
+The plotter software is designed to create svg output files on any machine installed with:
 - python3
 - tkinter
 
 Instead of driving a plotter, it will produce an svg in the `/emulated/` directory.
 
-Run any of the algorithms in the root directory of the format `plot_*.py` for example:
+Run any of the algorithms, from the command line, in the root directory. Any file of the format `plot_*.py` should create an image. For example, running:
 
 `python3 plot_machine.py`
 
+Should create an epicycloid svg `/emulated/` folder.
+
 # Running on a computer that's connected to a plotter machine
+The plotter software is designed to create drawings on any machine installed with:
+- python3
+- servoblaster (https://www.leenabot.com/Servo-Motor-driver/)
+
 This software will drive a plotter machine, and has been tested using a raspberry pi B2+. Output signals are provided on the GPIO.
 
 The plotter software will attempt to run a plotter machine if it detects it's hostname to be:
@@ -36,4 +42,8 @@ Run any of the algorithms in the root directory of the format plot_*.py as a sup
 
 `sudo python3 plot_machine.py`
 
-Servod is a 3rd party library used to manage the pen lift servo. Don't try and run the servo using the pi's pulse width mode functions. It will fail, and you will waste a bin load of time trying to work out why. https://www.leenabot.com/Servo-Motor-driver/ 
+Servoblaster is a 3rd party library used to manage a servo which lifts the pen from the paper 
+
+# Building a plotter
+Instructions for building the plotter / drawing machine are here:
+https://inkylines.blogspot.com/p/building-your-own-plotter.html
